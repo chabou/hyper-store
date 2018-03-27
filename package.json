@@ -11,12 +11,14 @@
     "dev": "yarn build --watch",
     "lint": "eslint .",
     "test": "yarn run lint",
+    "prepublishOnly": "yarn build",
     "precommit": "yarn run test",
     "release": "standard-version"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
     "eslint": "^4.19.1",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-prettier": "^2.6.0",
@@ -27,6 +29,7 @@
   },
   "babel": {
     "presets": [
+      "react",
       [
         "env",
         {
@@ -93,5 +96,8 @@
   "eslintIgnore": [
     "dist/**"
   ],
-  "dependencies": {}
+  "dependencies": {
+    "seamless-immutable": "^7.1.3",
+    "uuid": "^3.2.1"
+  }
 }
